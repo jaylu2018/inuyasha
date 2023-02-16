@@ -57,3 +57,7 @@ def create_scaffold():
 def main_scaffold():
     # 项目脚手架处理程序入口
     sys.exit(create_scaffold())
+
+
+if __name__ == '__main__':
+    main_scaffold()

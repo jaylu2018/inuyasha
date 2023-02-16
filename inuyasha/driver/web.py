@@ -30,8 +30,8 @@ class BasePage:
             return cls.chrome(playwright)
         if name in ["firefox", "ff"]:
             return cls.firefox(playwright)
-        if name == "edge":
-            return cls.edge(playwright)
+        if name == "webkit":
+            return cls.webkit(playwright)
         if name == "iphone":
             return cls.iphone(playwright)
         if name == "android":
@@ -54,7 +54,7 @@ class BasePage:
         return page
 
     @staticmethod
-    def edge(playwright):
+    def webkit(playwright):
         browser = playwright.webkit.launch(headless=EdgeConfig.headless, args=ChromeConfig.args)
         context = browser.new_context()
         context.set_default_timeout(EdgeConfig.timeout)

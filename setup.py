@@ -29,10 +29,13 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        'pytest~=7.2.1',
         'playwright~=1.30.0',
         'pytest-playwright~=0.3.0',
         'requests~=2.28.2',
         'pytest_cases~=3.6.13',
+        'loguru~=0.6.0',
+        'prettytable~=3.6.0',
     ],
     classifiers=[
         'Intended Audience :: Developers',

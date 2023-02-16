@@ -1,4 +1,5 @@
 from .core import TestCase
+from .utils.log_utils.core import log
 
 __author__ = "luyh"
 
