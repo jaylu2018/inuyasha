@@ -47,11 +47,13 @@ def create_scaffold():
         relative_path = root.replace(application_path, "").lstrip("\\").lstrip("/")
         if dirs:
             for dir_ in dirs:
-                create_folder(os.path.join(project_path, relative_path, dir_))
+                if not dir_.endswith("__pycache__"):
+                    create_folder(os.path.join(project_path, relative_path, dir_))
         if files:
             for file in files:
-                with open(os.path.join(root, file), encoding="utf-8") as f:
-                    create_file(os.path.join(project_path, relative_path, file), f.read())
+                if file.endswith(".py"):
+                    with open(os.path.join(root, file), encoding="utf-8") as f:
+                        create_file(os.path.join(project_path, relative_path, file), f.read())
 
 
 def main_scaffold():

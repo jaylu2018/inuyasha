@@ -1,8 +1,9 @@
 from inuyasha import TestCase
+from inuyasha.test_project.ui_test.test_application.page_objects.login import Login
 
 
-class TestSample(TestCase):
+class TestLogin(TestCase):
 
-    def test_web_case(self, playwright):
+    def test_login(self, playwright):
         page = self.page(playwright, name="chrome")
-        page.goto("https://www.baidu.com")
+        Login().login(page)
